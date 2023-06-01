@@ -5,4 +5,4 @@ This is a Tiktok project which is a part of NUS Orbital 2023. Created by Yuanche
 ## Knowledge and testing of Hertz servers to build API gateway 
 We have documented our experience with executing Hertz a hertz server
 
-After running main.go, we have received a message from the Hertz Server "Peppikah Received"
+After running main.go, we have successfully received a message from the Hertz Server "Peppikah Received"
