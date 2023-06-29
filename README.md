@@ -2,7 +2,7 @@
 This is a Tiktok project which is a part of NUS Orbital 2023. Created by Yuancheng and Yugan 
 
 #
-## Knowledge and testing of Hertz servers to build API gateway 
-We have documented our experience with executing Hertz a hertz server
-
-After building hertz_demo and running main.go, we have successfully received a message from the Hertz Server "Peppikah Received"
+## General Overview
+After creating echo.thrift in the idl folder, we used the Hertz framework to generate code for biz and hertz_gateway.
+We then used the Kitex framework to generate the code scaffold and server code under kitex_gen and kitex folders respectively.
+Lastly, we created a gateway module in biz which acts as an abstracted program to handle all the generic calls. 
