@@ -18,7 +18,7 @@ Example of HTTP request for Math service where 2 floats are required and an arit
 ## Files with important logic and of interest
 `biz/gateway/gateway.go`
 
-The file [biz/gateway/gateway.go](gateway.go) acts as an abstracted program to handle and create generic calls through a loop.
+The file [biz/gateway/gateway.go](biz/gateway/gateway.go) acts as an abstracted program to handle and create generic calls through a loop.
 
 `hertz_gateway/generator.py`
 
