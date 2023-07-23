@@ -10,7 +10,4 @@ enum Err
 	RequestServerFail     = 10005,
 	ServerHandleFail      = 10006,
 	ResponseUnableParse   = 10007,
-
-	// payment 20001- 29999
-	DuplicateOutOrderNo = 20001,
 }
