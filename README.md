@@ -55,4 +55,19 @@ We believe that the weighted round-robin load balancer has fewer limitations and
 We have fulfilled the objectives of implementing a flexible API gateway. Moreover, we have utilised software engineering and programming concepts such as DRY, high-level abstraction, and single responsibility principle for simple programming paradigms. Furthermore, our analysis has justified to use of round-robin load-balancer compared to random load-balancer. We have gained substantial exposure to CLoudweGo projects and various HTTP frameworks as well as the analytical tools for important design decisions. 
 
 
+## References and Inspirations 
+[https://www.brendangregg.com/flamegraphs.html](https://www.brendangregg.com/flamegraphs.html)
+
+[https://github.com/google/pprof/blob/main/doc/README.md](https://github.com/google/pprof/blob/main/doc/README.md)
+
+[https://github.com/cloudwego/biz-demo/tree/main/open-payment-platform](https://github.com/cloudwego/biz-demo/tree/main/open-payment-platform)
+
+[https://github.com/cloudwego/hertz-examples/tree/main/bizdemo/hertz_gorm](https://github.com/cloudwego/hertz-examples/tree/main/bizdemo/hertz_gorm)
+
+[https://www.cloudwego.io/docs/hertz/](https://www.cloudwego.io/docs/hertz/)
+
+[https://www.cloudwego.io/docs/kitex/](https://www.cloudwego.io/docs/kitex/)
+
+[https://www.cloudwego.io/docs/hertz/tutorials/basic-feature/middleware/pprof/](https://www.cloudwego.io/docs/hertz/tutorials/basic-feature/middleware/pprof/)
+
 
