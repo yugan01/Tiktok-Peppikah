@@ -20,7 +20,7 @@ Example of HTTP request for Math service where 2 floats are required and an arit
 The file [gateway.go](biz/gateway/gateway.go) and [router.go](hertz_gateway/router.go) acts as an abstracted program to handle and create generic calls through a loop.
 
 
-The Python [file](hertz_gateway/generator.py), sends random HTTP requests based on 2 command line arguments as sending HTTP commands one by one is inefficient. 
+The Python file [generator.py](hertz_gateway/generator.py), sends random HTTP requests based on 2 command line arguments as sending HTTP commands one by one is inefficient. 
 Users can send HTTP commands of a specific service and of a specific number by inputting the command line argument.
 
 Example of a User sending 10 HTTP requests to Echo service:
