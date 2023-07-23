@@ -1,9 +1,9 @@
 # Tiktok-Peppikah
 This is a Tiktok project which is a part of NUS Orbital 2023. Created by Yuancheng and Yugan 
 
-#
+
 ## General Overview
-The [thrift files](idl/) in the IDL folder underpin the services that the API gateway carries out. The Hertz and Kitex frameworks are utilized to generate server code for Hertz and Kitex servers. 
+The [thrift files](idl/) in the IDL folder underpin the services that the API gateway carries out. The Hertz and Kitex frameworks are utilized to generate server code for Hertz and Kitex servers. In this project, we have 2 Services: [Echo](idl/echo.thrift) and [Math](idl/math.thrift). The Echo service returns the same string as its response. The Math service carries out 4 arithmetic operations and returns the result as its response.
 Hertz servers accept HTTP requests and the biz folder contains the logic to route these requests to the appropriate Kitex servers for the service to be carried out. HTTP requests are sent to the Hertz servers through the curl command and have JSON bodies embedded in them. 
 
 Example of HTTP request for Echo service where the message is a string and the response is a repeat of the message:
@@ -22,7 +22,7 @@ The file [gateway.go](biz/gateway/gateway.go) acts as an abstracted program to h
 
 `hertz_gateway/generator.py`
 
-The Python [file](hertz_gateway/generator.py),sends random HTTP requests based on 2 command line arguments as sending HTTP commands one by one is inefficient. 
+The Python [file](hertz_gateway/generator.py), sends random HTTP requests based on 2 command line arguments as sending HTTP commands one by one is inefficient. 
 Users can send HTTP commands of a specific service and of a specific number by inputting the command line argument.
 
 Example of a User sending 10 HTTP requests to Echo service:
@@ -32,3 +32,23 @@ Example of a User sending 10 HTTP requests to Echo service:
 Or in MacOS
 
 `python3 generator.py Echo 10`
+
+## Programming Principles 
+With the aim of inculcating high-level abstraction, we created generator.py to automatically send random HTTP requests and it can be easily modified to fit the services of the users. 
+
+Furthermore, we used the concept of DRY to create gateway.go that creates generic calls for all the thrift files present.
+
+Moreover, all the files have a single responsibility to ensure simple understanding.
+
+
+## Analysis
+Using PPROF for visual analysis of Hertz projects, we generated callgraphs and flame graphs to compare the performance of 2 Load balancers: Weighted Round Robin Load balancer and Weighted Random Load Balancer.
+
+![Alt text](https://drive.google.com/file/d/1FdedlDyDDzZ0mt2xULtvx5EjkUAWgbQt/view?usp=sharing)
+
+
+We believe that the weighted round-robin load balancer has fewer limitations and is adopted in our project. The weighted random load balancer has the specific shortcomings of the parallel stack calls and the path requiring both calls to complete to continue the routine. 
+
+
+
+
