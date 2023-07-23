@@ -34,7 +34,7 @@ func customizedRegister(r *server.Hertz) {
 
 func registerGateway() {
 
-	idlPath := "./idl/"
+	idlPath := "../idl/"
 	c, err := os.ReadDir(idlPath)
 	if err != nil {
 		hlog.Fatalf("new thrift file provider failed: %v", err)
