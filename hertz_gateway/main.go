@@ -8,7 +8,11 @@ import (
 )
 
 func main() {
+	
+	//Starting the server
 	h := server.Default()
+
+	//Using Pprof for graphical analysis of this project
 	pprof.Register(h, "dev/pprof")
 
 	register(h)
