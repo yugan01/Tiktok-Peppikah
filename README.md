@@ -44,11 +44,14 @@ Moreover, all the files have a single responsibility to ensure simple understand
 ## Analysis
 Using PPROF for visual analysis of Hertz projects, we generated callgraphs and flame graphs to compare the performance of 2 Load balancers: Weighted Round Robin Load balancer and Weighted Random Load Balancer.
 
-![Alt text](https://drive.google.com/file/d/1FdedlDyDDzZ0mt2xULtvx5EjkUAWgbQt/view?usp=sharing)
+![Screenshot 2023-07-23 195349](https://github.com/yugan01/Tiktok-Peppikah/assets/122327042/240f40a1-56d4-4ccd-bd90-4a8604a3f25c)
 
 
-We believe that the weighted round-robin load balancer has fewer limitations and is adopted in our project. The weighted random load balancer has the specific shortcomings of the parallel stack calls and the path requiring both calls to complete to continue the routine. 
+We believe that the weighted round-robin load balancer has fewer limitations and thus, is adopted in our project. The weighted random load balancer has the specific shortcomings of the split stack calls and the path requiring both calls to complete to continue the routine. 
 
+
+## Conclusion
+We have fulfilled the objectives of implementing a flexible API gateway. Moreover, we have utilised software engineering and programming concepts such as DRY, high-level abstraction, and single responsibility principle for simple programming paradigms. Furthermore, our analysis has justified to use of round-robin load-balancer compared to random load-balancer. We have gained substantial exposure to CLoudweGo projects and various HTTP frameworks as well as the analytical tools for important design decisions. 
 
 
 
