@@ -22,6 +22,8 @@ func GenericCall(service string, method string, ctx context.Context, c *app.Requ
 	fmt.Println("Generic Call execution")
 
 	jsonBody := string(c.Request.BodyBytes())
+
+	//Creating the generic call, this function will be used by router.go in hertz_gateway
 	resp, err := cli.GenericCall(ctx, method, jsonBody)
 
 	if err != nil {
