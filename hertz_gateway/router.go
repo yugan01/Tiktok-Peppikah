@@ -39,6 +39,8 @@ func registerGateway() {
 	if err != nil {
 		hlog.Fatalf("new thrift file provider failed: %v", err)
 	}
+
+	//Setting up Nacos registry
 	nacosResolver, err := resolver.NewDefaultNacosResolver()
 	if err != nil {
 		hlog.Fatalf("err:%v", err)
@@ -48,6 +50,8 @@ func registerGateway() {
 		gateway.SvcMap = make(map[string]genericclient.Client)
 	}
 
+	//Loop to create generic calls for all IDL files
+	//Converts JSON to thrift binary
 	for _, entry := range c {
 		if entry.IsDir() || entry.Name() == "common.thrift" {
 			continue
