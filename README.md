@@ -20,8 +20,8 @@ Example of HTTP request for Math service where 2 floats are required and an arit
 The file [gateway.go](biz/gateway/gateway.go) and [router.go](hertz_gateway/router.go) acts as an abstracted program to handle and create generic calls through a loop.
 
 
-The Python file [generator.py](hertz_gateway/generator.py), sends random HTTP requests based on 2 command line arguments as sending HTTP commands one by one is inefficient. 
-Users can send HTTP commands of a specific service and of a specific number by inputting the command line argument.
+The Python file ,[generator.py](hertz_gateway/generator.py), sends random HTTP requests based on 2 command line arguments as sending HTTP commands one by one is inefficient. 
+Users can send HTTP commands of a specific service and of a specific number by inputting the command line arguments.
 
 Example of a User sending 10 HTTP requests to Echo service:
 
@@ -34,7 +34,7 @@ Or in MacOS
 ## Programming Principles 
 With the aim of inculcating high-level abstraction, we created generator.py to automatically send random HTTP requests and it can be easily modified to fit the services of the users. 
 
-Furthermore, we used the concept of DRY to create gateway.go that creates generic calls for all the thrift files present.
+Furthermore, we used the concept of DRY to create gateway.go and modified router.go to create generic calls for all the thrift files present.
 
 Moreover, all the files have a single responsibility to ensure simple understanding.
 
@@ -44,6 +44,9 @@ Using PPROF for visual analysis of Hertz projects, we generated callgraphs and f
 
 ![Screenshot 2023-07-23 195349](https://github.com/yugan01/Tiktok-Peppikah/assets/122327042/240f40a1-56d4-4ccd-bd90-4a8604a3f25c)
 
+By interpreting the node colour, node font size, edge weight and edge colour, a call graph can be analysed. The callgraph of the API gateway that uses weighted round-robin load balancer has 2 independent call stacks running. The left shorter call stack has a redder node and edge colour which indicates large positive cumulative values. Furthermore, the thicker edge weights on the left indicate more resources were used along that path. 
+
+Analysing the right call graph shows us that there is a single path with a split and a join at the beginning. This implies concurrent service calls and for the path to proceed, both calls must be completed. This could lead to some form of inefficiency as the stack needs to wait for both calls to be completed before it can proceed with the routine.
 
 We believe that the weighted round-robin load balancer has fewer limitations and thus, is adopted in our project. The weighted random load balancer has the specific shortcomings of the split stack calls and the path requiring both calls to complete to continue the routine. 
 
