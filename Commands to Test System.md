@@ -16,6 +16,8 @@
 
 ## 3) Startup Nacos Registry (in a new terminal tab)
 
+- `cd nacos-2/bin`
+
 MacOS/Linux/Unix
 - `sh startup.sh -m standalone`
 
